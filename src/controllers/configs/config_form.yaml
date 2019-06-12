@@ -1,0 +1,10 @@
+name: Configs
+form: $/branmuffin/googleconnect/models/configs/fields.yaml
+modelClass: BranMuffin\GoogleConnect\Models\Configs
+defaultRedirect: branmuffin/googleconnect/configs
+create:
+    redirect: 'branmuffin/googleconnect/configs/update/:id'
+    redirectClose: branmuffin/googleconnect/configs
+update:
+    redirect: branmuffin/googleconnect/configs
+    redirectClose: branmuffin/googleconnect/configs

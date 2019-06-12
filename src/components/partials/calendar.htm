@@ -1,0 +1,65 @@
+{% if success %}
+<div id="success">
+    <p>{{ success }}</p>
+</div>
+{% endif %}
+<table class="calendar">
+	<thead>
+		<tr>
+			<th colspan="7" class="center">
+				<h2>{{ time|date('F') }}</h2>
+			</th>
+		</tr>
+		<tr>
+			<th width="14%" class="header">Sunday</th>
+			<th width="14%" class="header">Monday</th>
+			<th width="14%" class="header">Tuesday</th>
+			<th width="14%" class="header">Wednesday</th>
+			<th width="14%" class="header">Thursday</th>
+			<th width="14%" class="header">Friday</th>
+			<th width="14%" class="header">Saturday</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% set today = time|date('d') %}
+		{% set thisMonth = time|date('m') %}
+		{% set daysInMonth = time|date('t') %}
+		{% set startDow = time|date('F 1\\s\\t Y')|date('w') %}
+		{% set dow = startDow %}
+		{% for day in range(1,daysInMonth) %}
+			{% if loop.first and startDow != 0 %}
+				<td colspan="{{ startDow }}"></td>
+			{% endif %}
+			<td class="day {% if today == day %}active{% endif %}">
+				<div>
+					<div class="number">{{ day }}</div>
+					<div>
+                    {% for event in __SELF__.getCalendar %}
+                    {% if thisMonth == event.dateMonth %}
+                    {% if day == event.dateDay %}
+                    <p class="event"><a href="{{ event.link }}" target="_blank">{{ event.summary }}</a> <a href="/dev/calendar?eid={{event.id}}" class="editLink"><span class="fas fa-edit"></span></a><br />
+                    {{ event.dateTime }}
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+					</div>
+				</div>
+			</td>
+			{% if loop.last and dow != 6 %}
+				<td colspan="{{ 6 - dow }}">&nbsp;</td>
+			{% endif %}
+			{% if dow == 6 %}
+				{% set dow = 0 %}
+			</tr>
+			<tr>
+			{% else %}
+				{% set dow = dow + 1 %}
+			{% endif %}
+		{% endfor %}
+		</tr>
+	</tbody>
+</table>
+<button class="addevent" data-request="onCreate" data-request-update="'{{__SELF__}}::createEvent' : '#calendar'">
+    <span class="far fa-calendar-plus"></span>
+</button>

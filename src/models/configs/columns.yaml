@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    projectid:
+        label: 'Project ID'
+        type: text
+        searchable: true
+        sortable: true
+    redirecturis:
+        label: 'Redirect URIs'
+        type: text
+        searchable: true
+        sortable: true

@@ -1,0 +1,16 @@
+plugin:
+    name: 'branmuffin.googleconnect::lang.plugin.name'
+    description: 'branmuffin.googleconnect::lang.plugin.description'
+    author: Dle
+    icon: oc-icon-google
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Google Connect'
+        url: branmuffin/googleconnect/configs
+        icon: icon-google
+        sideMenu:
+            side-menu-item:
+                label: Configurations
+                url: branmuffin/googleconnect/configs
+                icon: icon-gears

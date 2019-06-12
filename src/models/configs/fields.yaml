@@ -1,0 +1,33 @@
+fields:
+    clientid:
+        label: 'Client ID'
+        span: auto
+        type: text
+    clientsecret:
+        label: 'Client Secret'
+        span: auto
+        type: text
+    projectid:
+        label: 'Project ID'
+        span: auto
+        type: text
+    redirecturis:
+        label: 'Redirect URIs'
+        span: auto
+        type: text
+    authuri:
+        label: 'Auth URI'
+        span: auto
+        type: text
+    tokenuri:
+        label: 'Token URI'
+        span: auto
+        type: text
+    certurl:
+        label: 'Cert URL'
+        span: auto
+        type: text
+    javascriptorigins:
+        label: 'Javascript Origins'
+        span: auto
+        type: text

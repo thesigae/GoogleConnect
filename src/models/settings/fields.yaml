@@ -1,0 +1,119 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        # Calendar Settings
+        calendar_client_id:
+            span: left
+            label: Client Id
+            comment: Enter the Client Id of the app.
+            type: text
+            tab: Google Calendar
+            
+        calendar_client_secret:
+            span: right
+            label: Client Secret
+            comment: Enter the Client Secret of the app.
+            type: text
+            tab: Google Calendar
+            
+        calendar_auth_uri:
+            span: left
+            label: Auth URI
+            comment: Enter the Auth URI.
+            type: text
+            tab: Google Calendar
+            
+        calendar_token_uri:
+            span: right
+            label: Token URI
+            comment: Enter the Token URI.
+            type: text
+            tab: Google Calendar
+            
+        calendar_cert_url:
+            span: left
+            label: Cert URL
+            comment: Enter the Auth Provider Cert URL.
+            type: text
+            tab: Google Calendar
+            
+        calendar_project_id:
+            span: right
+            label: Project Id
+            comment: Enter the Project Id of the app.
+            type: text
+            tab: Google Calendar
+            
+        calendar_redirect_uris:
+            span: left
+            label: Redirect URIs
+            comment: Enter the Redirect URIs.
+            type: text
+            tab: Google Calendar
+            
+        calendar_javascript_origins:
+            span: right
+            label: Javascript Origins
+            comment: Enter the Token URI.
+            type: text
+            tab: Google Calendar
+            
+        # Drive Settings
+        drive_client_id:
+            span: left
+            label: Client Id
+            comment: Enter the Client Id of the app.
+            type: text
+            tab: Google Drive
+            
+        drive_client_secret:
+            span: right
+            label: Client Secret
+            comment: Enter the Client Secret of the app.
+            type: text
+            tab: Google Drive
+            
+        drive_auth_uri:
+            span: left
+            label: Auth URI
+            comment: Enter the Auth URI.
+            type: text
+            tab: Google Drive
+            
+        drive_token_uri:
+            span: right
+            label: Token URI
+            comment: Enter the Token URI.
+            type: text
+            tab: Google Drive
+            
+        drive_cert_url:
+            span: left
+            label: Cert URL
+            comment: Enter the Auth Provider Cert URL.
+            type: text
+            tab: Google Drive
+            
+        drive_project_id:
+            span: right
+            label: Project Id
+            comment: Enter the Project Id of the app.
+            type: text
+            tab: Google Drive
+            
+        drive_redirect_uris:
+            span: left
+            label: Redirect URIs
+            comment: Enter the Redirect URIs.
+            type: text
+            tab: Google Drive
+            
+        drive_javascript_origins:
+            span: right
+            label: Javascript Origins
+            comment: Enter the Token URI.
+            type: text
+            tab: Google Drive

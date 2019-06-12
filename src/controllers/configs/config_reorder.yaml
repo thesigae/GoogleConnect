@@ -1,0 +1,4 @@
+title: Configs
+modelClass: BranMuffin\GoogleConnect\Models\Configs
+toolbar:
+    buttons: reorder_toolbar

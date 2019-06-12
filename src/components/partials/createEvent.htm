@@ -1,0 +1,22 @@
+<div>
+    {% if errors %}
+    <div id="errors">
+        {% for key,error in errors.messages %}
+            {% if key == 'startdate' %}
+                The Start Date Field is required.
+            {% elseif key == 'enddate' %}
+                The End Date field is required.
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    <form data-request="{{__SELF__}}::onCreateEvent" id="createEventForm">
+    <p><label for="startDate">Start Date:</label> <input type="datetime-local" id="startDate" name="startDate"> <label for="endDate">End Date:</label> <input type="datetime-local" id="endDate" name="endDate"></p>
+    <p><label for="summary">Summary</label> <input type="text" id="summary" name="summary" placeholder="Summary" class="width-4-5"></p>
+    <p><label for="tos" title="Enter the attendees of the event">Attendees</label> <input type="text" id="tos" name="tos" class="width-1-1"></p>
+    <p><label for="location" title="Enter the location of the event.">Location</label> <input type="text" id="location" name="location" class="width-1-1"></p>
+    <p><label for="description">Description</label><br />
+    <textarea rows="4" cols="50" id="description" name="description" class="width-1-1"></textarea></p>
+    <p class="row flex-between"><button type="submit">Save</button><button data-request="onCancel">Cancel</button></p>
+    </form>
+</div>

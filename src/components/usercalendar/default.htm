@@ -1,0 +1,79 @@
+{% put styles %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.standalone.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+.calendar {
+    width: 67vw;
+    margin: 0 auto;
+}
+.calendar th.header {
+    height: 50px;
+    background-color: #0095ff;
+    color: #fff;
+}
+.calendar td.day {
+    height: 120px;
+    background-color: white;
+    position: relative;
+    padding: 15px 10px;
+}
+.calendar .number {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    font-size: 12px;
+}
+.calendar td.day.active {
+    background: #b3dfff;
+}
+.addevent {
+    position: fixed;
+    right: 10%;
+    top: 30%;
+    font-size: 3em;
+    color: #0095ff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.width-1-1 {
+    width:100%;
+}
+.width-4-5 {
+    width:80%;
+}
+.row {
+    display:flex;
+    flex-wrap: wrap;
+}
+.flex-between {
+    justify-content: space-between;
+}
+.event:hover .editLink {
+    display: inline-block;
+}
+.editLink {
+    display: none;
+}
+.eventDescription {
+    min-height:180px;
+}
+</style>
+{% endput %}
+{% if __SELF__.getCalendar %}<div id="calendar">
+    {% if __SELF__.getEvent() %}
+    {% partial __SELF__~'::updateEvent' %}
+    {% else %}
+    {% partial __SELF__~'::calendar' %}
+    {% endif %}
+</div>
+{% else %}
+{{ __SELF__.getClient }}
+{% endif %}
+
+{% put scripts %}
+<script>
+    $("#success").fadeTo(5000,1).fadeOut(1000);
+</script>
+{% endput %}
